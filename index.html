@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="vi">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Hiệu ứng CSS 3D</title>
+	<meta name="description" content="Hiệu ứng trình diễn ảnh 3D đẹp mắt chỉ với HTML5 và CSS3" />
+	<meta property="og:description" content="Hiệu ứng trình diễn ảnh 3D đẹp mắt chỉ với HTML5 và CSS3" />
+	<meta property="og:image" content="https://redirect.nhq.vn/demo/screenshot.png" />
+	<link rel="stylesheet" href="css/style3.css" type="text/css" media="screen" />
+	<link rel="stylesheet prefetch" href="css/font-awesome.min.css" />
+	<script type="text/javascript" charset="utf-8">
+	function hasClassName(inElement, inClassName)
+	{
+		var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)');
+		return regExp.test(inElement.className);
+	}
+
+	function addClassName(inElement, inClassName)
+	{
+		if (!hasClassName(inElement, inClassName))
+			inElement.className = [inElement.className, inClassName].join(' ');
+	}
+
+	function removeClassName(inElement, inClassName)
+	{
+		if (hasClassName(inElement, inClassName)) {
+			var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)', 'g');
+			var curClasses = inElement.className;
+			inElement.className = curClasses.replace(regExp, ' ');
+		}
+	}
+
+	function toggleClassName(inElement, inClassName)
+	{
+		if (hasClassName(inElement, inClassName))
+			removeClassName(inElement, inClassName);
+		else
+			addClassName(inElement, inClassName);
+	}
+
+	function toggleShape()
+	{
+		var shape = document.getElementById('shape');
+		if (hasClassName(shape, 'cube') || hasClassName(shape, 'autoLoad')) {
+			if (hasClassName(shape, 'cube')) {
+				removeClassName(shape, 'cube');
+			}
+			if (hasClassName(shape, 'autoLoad')) {
+				removeClassName(shape, 'autoLoad');
+			}
+			addClassName(shape, 'ring');
+		} else {
+			removeClassName(shape, 'ring');
+			addClassName(shape, 'cube');
+		}
+
+		var stage = document.getElementById('stage');
+		if (hasClassName(shape, 'ring'))
+			stage.style.webkitTransform = 'translateZ(-200px)';
+		else
+			stage.style.webkitTransform = '';
+	}
+	
+	function downloadLink()
+    {
+		location.href = 'https://www.facebook.com/gnurthieu.130200/';
+    }
+	
+	var count = 0;
+	var num_bg = 1;
+	var next_bg = 0;
+	var preLoadbg;
+	
+	function timedCount()
+	{
+		if(count >= 8) {
+			count = 0;
+			autoLoad();
+		} else {
+			count = count + 1;
+		}
+		if(next_bg >= 15) {
+			num_bg = num_bg + 1;
+			if(num_bg > 10) {
+				num_bg = 1;
+			}
+			document.body.style.backgroundImage = "url(css/bg/" + num_bg + ".jpg)";
+			preLoadbg = new Image();
+			if(num_bg == 10) {
+				preLoadbg.src = "css/bg/1.jpg";
+			} else {
+				preLoadbg.src = "css/bg/" + (num_bg + 1) + ".jpg";
+			}
+			next_bg = 0;
+		} else {
+			next_bg = next_bg + 1;
+		}
+		setTimeout(timedCount, 1000);
+	}
+	
+	function autoLoad()
+	{
+		var shapeTest = document.getElementById('shape');
+		if (hasClassName(shapeTest, 'cube')) {
+			removeClassName(shapeTest, 'cube');
+			addClassName(shapeTest, 'autoLoad');
+		} else {
+			toggleShape();
+		}
+	}
+	</script>
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/snow.js"></script>
+	<script type="text/javascript" src="js/player.js"></script>
+</head>
+<body onload="timedCount()">
+	<div id="container">
+		<div id="stage">
+			<div id="shape" class="cube backfaces">
+				<div class="plane one"></div>
+				<div class="plane two"></div>
+				<div class="plane three"></div>
+				<div class="plane four"></div>
+				<div class="plane five"></div>
+				<div class="plane six"></div>
+				<div class="plane seven"></div>
+				<div class="plane eight"></div>
+				<div class="plane nine"></div>
+				<div class="plane ten"></div>
+				<div class="plane eleven"></div>
+				<div class="plane twelve"></div>
+			</div>
+		</div>
+		<div class="mhn-player">
+			<div class="album-art"></div>
+			<div class="play-list">
+				<a href="#" class="play"
+					data-id="1"
+					data-album=""
+					data-artist="Olly Murs"
+					data-title="That Girl"
+					data-albumart="audio/covers/1.jpg"
+					data-url="audio/That_Girl.mp3">
+				</a>
+
+				<a href="#" class="play"
+					data-id="2"
+					data-album=""
+					data-artist="Jason Mraz"
+					data-title="I'm Yours"
+					data-albumart="audio/covers/2.jpg"
+					data-url="audio/Im_Yours.mp3">
+				</a>
+
+				<a href="#" class="play"
+					data-id="3"
+					data-album=""
+					data-artist="Sam Milby"
+					data-title="My Girl"
+					data-albumart="audio/covers/3.jpg"
+					data-url="audio/My_Girl.mp3">
+				</a>
+
+				<a href="#" class="play"
+					data-id="4"
+					data-album=""
+					data-artist="Maroon 5"
+					data-title="Girls Like You"
+					data-albumart="audio/covers/4.jpg"
+					data-url="audio/Girls_Like_You.mp3">
+				</a>
+
+				<a href="#" class="play"
+					data-id="5"
+					data-album=""
+					data-artist="Martin Garrix & Troye Sivan"
+					data-title="There For You"
+					data-albumart="audio/covers/5.jpg"
+					data-url="audio/There_For_You.mp3">
+				</a>
+
+				<a href="#" class="play"
+					data-id="6"
+					data-album=""
+					data-artist="One Direction"
+					data-title="What Makes You Beautiful"
+					data-albumart="audio/covers/6.jpg"
+					data-url="audio/What_Makes_You_Beautiful.mp3">
+				</a>
+
+				<a href="#" class="play"
+					data-id="7"
+					data-album=""
+					data-artist="911"
+					data-title="I Do"
+					data-albumart="audio/covers/7.jpg"
+					data-url="audio/I_Do.mp3">
+				</a>
+
+				<a href="#" class="play"
+					data-id="8"
+					data-album=""
+					data-artist="Fiona Fung"
+					data-title="A Little Love"
+					data-albumart="audio/covers/8.jpg"
+					data-url="audio/A_Little_Love.mp3">
+				</a>
+				
+				<a href="#" class="play"
+					data-id="9"
+					data-album=""
+					data-artist="Fiona Fung"
+					data-title="Proud Of You"
+					data-albumart="audio/covers/9.jpg"
+					data-url="audio/Proud_Of_You.mp3">
+				</a>
+				
+				<a href="#" class="play"
+					data-id="10"
+					data-album=""
+					data-artist="Shane Filan"
+					data-title="Beautiful In White"
+					data-albumart="audio/covers/10.jpg"
+					data-url="audio/Beautiful_In_White.mp3">
+				</a>
+			</div>
+			<div class="audio">
+				<audio id="player" class="music" data-id="1" autoplay><source src="audio/That_Girl.mp3" type="audio/mpeg" /></audio>
+			</div>
+			<div class="current-info">
+				<div class="song-artist"></div>
+				<!--div class="song-album"></div-->
+				<div class="song-title"></div>
+			</div>
+			<div class="controls">
+				<a href="#" class="toggle-play-list"><i class="fa fa-list-ul"></i></a>
+				<div class="duration clearfix">
+					<span class="pull-left play-position"></span>
+					<span class="pull-right"><span class="play-current-time">00:00</span> / <span class="play-total-time">00:00</span></span>
+				</div>
+				<div class="progress"><div class="bar"></div></div>
+				<div class="action-button">
+					<a href="" class="prev">&blacktriangleleft;</a>
+					<a href="" class="play-pause">&par;</a>
+					<a href="" class="stop"> &blacksquare;</a>
+					<a href="" class="next">&blacktriangleright;</a>
+					<input type="range" class="volume" min="0" max="1" step="0.1" value="0.8" data-css="0.8">
+				</div>
+			</div>
+		</div>
+
+		<div class="author">
+			<button onclick="downloadLink()">&copy; Gnurt Hieu</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		
+		var audios = [
+			"audio/That_Girl.mp3",
+			"audio/Im_Yours.mp3",
+			"audio/My_Girl.mp3",
+			"audio/Girls_Like_You.mp3",
+			"audio/There_For_You.mp3",
+			"audio/What_Makes_You_Beautiful.mp3",
+			"audio/I_Do.mp3",
+			"audio/A_Little_Love.mp3",
+			"audio/Beautiful_In_White.mp3",
+			"audio/Proud_Of_You.mp3"
+		];
+		var music = document.getElementById("player");
+		var getSrc = document.getElementsByTagName("source");
+		getSrc[0].src = audios[Math.floor(Math.random() * 10)];
+		music.load();
+		var index = audios.indexOf(getSrc[0].getAttribute("src"));
+		music.addEventListener('ended', function() {
+			if(index == -1 || index >= 9) {
+				index = 0;
+			} else {
+				index = index + 1;
+			}
+			getSrc[0].src = audios[index];
+			music.load();
+			music.play();       
+		});
+		
+		var firstPreload = new Image();
+		firstPreload.src = "css/bg/8.jpg";
+	</script>
+	<!--//[ https://www.facebook.com/nhquyet ]//-->
+</body>
+</html>
