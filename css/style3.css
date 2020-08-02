@@ -9,6 +9,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	background-size: inherit;
 	-webkit-transition: 3s;
 	margin: 0;
 	padding: 0;
@@ -19,7 +20,7 @@
 }
 	
 audio {
-	max-width: 300px;
+	max-width: 500px;
 	max-height: 30px;
 	vertical-align: middle;
 }
@@ -315,14 +316,14 @@ audio {
 }
 
 .author button {
-	background-color: #f5f5f5;
+	background-color: #ffffff;
 	height: 28px;
 	padding-left: 10px;
 	padding-right: 10px;
 	vertical-align: middle;
 	-webkit-border-radius: 15px;
 	-webkit-box-sizing: border-box;
-	border: 1px solid #fff;
+	border: 1px solid #000000;
 }
 
 .author button:hover {
@@ -367,17 +368,17 @@ audio {
     background:rgba(255,255,255,.2);
 }
 
-/* .mhn-player{
+.mhn-player{
 	width:350px;
 	height:500px;
 	padding:15px;
-	background:rgba(0, 0, 255, 0.2);
-	box-shadow:0 16px 28px 0 rgba(0,0,0,.22),0 25px 55px 0 rgba(0,0,0,.21);
+	background:rgba(243, 243, 243, 0.2);
+	box-shadow:0 16px 28px 0 rgba(211, 26, 26, 0.22),0 25px 55px 0 rgba(0,0,0,.21);
 	right: 15px;
 	bottom: 15px;
 	position: absolute;
 	z-index: 1;
-} */
+}
 .mhn-player .album-art,
 .mhn-player .album-art{
 	width:320px;
@@ -519,7 +520,7 @@ audio {
 .mhn-player .controls .toggle-play-list{
 	right:5px;
 	width:40px;
-	color:#ccc;
+	color:rgb(2, 2, 2);
 	height:40px;
 	bottom:100px;
 	border-radius:50%;
@@ -542,7 +543,7 @@ audio {
 	background:#262626;
 }
 .mhn-player .controls .duration{
-	color:#ccc;
+	color:rgb(224, 18, 18);
 	font-size:14px;
 }
 .mhn-player .controls .progress .bar{

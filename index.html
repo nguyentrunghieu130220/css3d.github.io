@@ -7,7 +7,6 @@
 	<title>Hiệu ứng CSS 3D</title>
 	<meta name="description" content="Hiệu ứng trình diễn ảnh 3D đẹp mắt chỉ với HTML5 và CSS3" />
 	<meta property="og:description" content="Hiệu ứng trình diễn ảnh 3D đẹp mắt chỉ với HTML5 và CSS3" />
-	<meta property="og:image" content="https://redirect.nhq.vn/demo/screenshot.png" />
 	<link rel="stylesheet" href="css/style3.css" type="text/css" media="screen" />
 	<link rel="stylesheet prefetch" href="css/font-awesome.min.css" />
 	<script type="text/javascript" charset="utf-8">
@@ -142,7 +141,7 @@
 					data-artist="Olly Murs"
 					data-title="That Girl"
 					data-albumart="audio/covers/1.jpg"
-					data-url="audio/That_Girl.mp3">
+					data-url="audio/1.mp3">
 				</a>
 
 				<a href="#" class="play"
@@ -151,7 +150,7 @@
 					data-artist="Jason Mraz"
 					data-title="I'm Yours"
 					data-albumart="audio/covers/2.jpg"
-					data-url="audio/Im_Yours.mp3">
+					data-url="audio/2.mp3">
 				</a>
 
 				<a href="#" class="play"
@@ -160,7 +159,7 @@
 					data-artist="Sam Milby"
 					data-title="My Girl"
 					data-albumart="audio/covers/3.jpg"
-					data-url="audio/My_Girl.mp3">
+					data-url="audio/3.mp3">
 				</a>
 
 				<a href="#" class="play"
@@ -169,7 +168,7 @@
 					data-artist="Maroon 5"
 					data-title="Girls Like You"
 					data-albumart="audio/covers/4.jpg"
-					data-url="audio/Girls_Like_You.mp3">
+					data-url="audio/4.mp3">
 				</a>
 
 				<a href="#" class="play"
@@ -178,7 +177,7 @@
 					data-artist="Martin Garrix & Troye Sivan"
 					data-title="There For You"
 					data-albumart="audio/covers/5.jpg"
-					data-url="audio/There_For_You.mp3">
+					data-url="audio/5.mp3">
 				</a>
 
 				<a href="#" class="play"
@@ -187,7 +186,7 @@
 					data-artist="One Direction"
 					data-title="What Makes You Beautiful"
 					data-albumart="audio/covers/6.jpg"
-					data-url="audio/What_Makes_You_Beautiful.mp3">
+					data-url="audio/6.mp3">
 				</a>
 
 				<a href="#" class="play"
@@ -196,7 +195,7 @@
 					data-artist="911"
 					data-title="I Do"
 					data-albumart="audio/covers/7.jpg"
-					data-url="audio/I_Do.mp3">
+					data-url="audio/7.mp3">
 				</a>
 
 				<a href="#" class="play"
@@ -205,7 +204,7 @@
 					data-artist="Fiona Fung"
 					data-title="A Little Love"
 					data-albumart="audio/covers/8.jpg"
-					data-url="audio/A_Little_Love.mp3">
+					data-url="audio/8.mp3">
 				</a>
 				
 				<a href="#" class="play"
@@ -214,7 +213,7 @@
 					data-artist="Fiona Fung"
 					data-title="Proud Of You"
 					data-albumart="audio/covers/9.jpg"
-					data-url="audio/Proud_Of_You.mp3">
+					data-url="audio/9.mp3">
 				</a>
 				
 				<a href="#" class="play"
@@ -223,29 +222,25 @@
 					data-artist="Shane Filan"
 					data-title="Beautiful In White"
 					data-albumart="audio/covers/10.jpg"
-					data-url="audio/Beautiful_In_White.mp3">
+					data-url="audio/10.mp3">
 				</a>
 			</div>
 			<div class="audio">
-				<audio id="player" class="music" data-id="1" autoplay><source src="audio/That_Girl.mp3" type="audio/mpeg" /></audio>
+				<audio id="player" class="music" data-id="1" autoplay><source src="audio/1.mp3" type="audio/mpeg" /></audio>
 			</div>
-			<div class="current-info">
-				<div class="song-artist"></div>
-				<!--div class="song-album"></div-->
-				<div class="song-title"></div>
-			</div>
+			
 			<div class="controls">
-				<a href="#" class="toggle-play-list"><i class="fa fa-list-ul"></i></a>
+				
 				<div class="duration clearfix">
 					<span class="pull-left play-position"></span>
 					<span class="pull-right"><span class="play-current-time">00:00</span> / <span class="play-total-time">00:00</span></span>
 				</div>
 				<div class="progress"><div class="bar"></div></div>
 				<div class="action-button">
-					<a href="" class="prev">&blacktriangleleft;</a>
-					<a href="" class="play-pause">&par;</a>
-					<a href="" class="stop"> &blacksquare;</a>
-					<a href="" class="next">&blacktriangleright;</a>
+					<a href="" class="prev">Pre</a>
+					<a href="" class="play-pause">Pau</a>
+					
+					<a href="" class="next">Next</a>
 					<input type="range" class="volume" min="0" max="1" step="0.1" value="0.8" data-css="0.8">
 				</div>
 			</div>
