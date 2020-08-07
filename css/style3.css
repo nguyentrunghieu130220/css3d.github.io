@@ -530,12 +530,31 @@ audio {
 	background-color:crimson;
 	padding:10px 0;
 }
-.mhn-player .controls .fa-pp:before{
-	content:'';
+.mhn-player .controls  .fa-play:before{
+	content:'Play';
 }
-.mhn-player .controls .active .fa-pp:before{
-	content:'';
+.mhn-player .controls .active .fa-play:before{
+	content:'Pause';
 }
+.mhn-player .controls .fa-step-backward:before{
+	content:'Prev';
+}
+.mhn-player .controls .active .fa-step-backward:before{
+	content:'Prev';
+}
+.mhn-player .controls .fa-stop:before{
+	content:'Stop';
+}
+.mhn-player .controls .active .fa-stop:before{
+	content:'Stop';
+}
+.mhn-player .controls .fa-step-forward:before{
+	content:'Next';
+}
+.mhn-player .controls .active .fa-step-forward:before{
+	content:'Next';
+}
+
 .mhn-player .controls .progress{
 	height:1px;
 	margin:15px 0;
